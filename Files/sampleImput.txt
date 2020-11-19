@@ -1,0 +1,42 @@
+---------- Example 1
+Sample input:
+
+Alitalia  Rome	180
+Alitalia  Pisa 82
+Germanwings Munich   96
+Germanwings  Frankfurt 163
+NorwegianAir  Bergen  202
+Wizzair London 184
+Wizzair Frankfurt 83
+Wizzair Lisbon 198
+
+Sample output:
+
+2
+NorwegianAir Bergen 202
+Alitalia Pisa 82
+Wizzair 465
+
+---------- Example 2
+Sample input:
+
+Alitalia  Rome	180
+Wizzair	  Cracow	100
+Wizzair Barcelona 150
+Sample output:
+
+0
+Alitalia Rome 180
+There is no flight with passengers less than 100.
+Wizzair 250
+
+---------- Example 3
+Sample input:
+
+ 
+Sample output:
+
+0
+The file is empty!
+There is no flight with passengers less than 100.
+The file is empty!
