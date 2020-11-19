@@ -9,7 +9,9 @@ namespace BudapestAirportFileApp
     {
         private static string filePath = @"D:\VS Repos\BudapestAirportApp\Files\input.txt";
         private static char[] delimiterChars = { ' ', '\t' };
-        private static List<(string, string, string)> budapestAirportData = new List<(string, string, string)>();        
+        private static List<(string, string, string)> budapestAirportData = new List<(string, string, string)>();
+        private const string nolessthan100Message = "There is no flight with passengers less than 100";
+        private const string emptyDataMessage = "The file is empty!";
 
 
         static void ClassifyData()
@@ -62,7 +64,7 @@ namespace BudapestAirportFileApp
                 }
             }
 
-            result = budapestAirportData[listIndex].Item1 + " " + budapestAirportData[listIndex].Item2 + " " + budapestAirportData[listIndex].Item3;
+            result = budapestAirportData.Count != 0 ? budapestAirportData[listIndex].Item1 + " " + budapestAirportData[listIndex].Item2 + " " + budapestAirportData[listIndex].Item3 : emptyDataMessage;
 
             return result;
         }
@@ -72,6 +74,7 @@ namespace BudapestAirportFileApp
         static string Exercise3()
         {
             int listIndex = 0;
+            bool thereIslessThan100 = false;
             string result;
 
             for (int i = 0; i < budapestAirportData.Count; i++)
@@ -79,11 +82,12 @@ namespace BudapestAirportFileApp
                 if (Int32.Parse(budapestAirportData[i].Item3) < 100)
                 {
                     listIndex = i;
+                    thereIslessThan100 = true;
                     break;
                 }                   
             }
 
-            result = budapestAirportData[listIndex].Item1 + " " + budapestAirportData[listIndex].Item2 + " " + budapestAirportData[listIndex].Item3;
+            result = thereIslessThan100 ? budapestAirportData[listIndex].Item1 + " " + budapestAirportData[listIndex].Item2 + " " + budapestAirportData[listIndex].Item3 : nolessthan100Message;
 
             return result;
         }
@@ -114,7 +118,7 @@ namespace BudapestAirportFileApp
                  
             }
 
-            result = higherAirLineWithMostPassengers + " " + airlinesVsPassengers[higherAirLineWithMostPassengers].ToString();
+            result = budapestAirportData.Count != 0 ? higherAirLineWithMostPassengers + " " + airlinesVsPassengers[higherAirLineWithMostPassengers].ToString() : emptyDataMessage;
 
             return result;
         }
@@ -124,7 +128,6 @@ namespace BudapestAirportFileApp
         {
             ClassifyData();
             Console.Out.WriteLine(Exercise1() + '\n' + Exercise2() + '\n' + Exercise3() + '\n' + Exercise4());
-            Console.ReadLine();
         }
 
 
