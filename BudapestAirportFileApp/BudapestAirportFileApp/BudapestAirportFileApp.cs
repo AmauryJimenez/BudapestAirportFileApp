@@ -7,12 +7,13 @@ namespace BudapestAirportFileApp
 {
     public class BudapestAirportFileApp
     {
-        private static string filePath = @"D:\VS Repos\BudapestAirportApp\Files\input.txt";
+        //private static string filePath = @"D:\VS Repos\BudapestAirportApp\Files\input.txt";
+        private static string filePath = AppDomain.CurrentDomain.BaseDirectory + @"\input.txt";
         private static char[] delimiterChars = { ' ', '\t' };
         private static List<(string, string, string)> budapestAirportData = new List<(string, string, string)>();
         private const string nolessthan100Message = "There is no flight with passengers less than 100";
         private const string emptyDataMessage = "The file is empty!";
-
+        
 
         static void ClassifyData()
         {
