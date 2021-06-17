@@ -132,7 +132,7 @@ namespace BudapestAirportFileApp
         static void Main(string[] args)
         {
             ClassifyData();
-            Console.Out.WriteLine(Exercise1() + '\n' + Exercise2() + '\n' + Exercise3() + '\n' + Exercise4());
+            Console.Out.WriteLine(Exercise1() + '\n' + Exercise2() + '\n' + Exercise3() + '\n' + Exercise4());//
         }
 
     }
